@@ -70,7 +70,7 @@ until [ -f /tmp/go ] ; do sleep 0.1 ; : ; done
         r+=$((rD*rS)) g+=$((gD*gS)) b+=$((bD*bS))
           for ((x=0; x<180; x+=xSteps))
           do
-		  if (( ((x+y+SECONDS+(y%20))/20) % 2 ))
+		  if (( ((x+y+SECONDS+(y%20)+(x%20))/20) % 2 ))
 		  then
 			  PlotOnOff=off
 		  else
