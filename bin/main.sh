@@ -5,7 +5,7 @@
 #
 source ~/dev/newbashplot/bin/setup.sh
 
-typeset -i nbp_x=0
+typeset -i nbp_n=0
 nbp_displayPlot=Y
   for nbp_n in {0..160}
   do
