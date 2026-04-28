@@ -5,19 +5,19 @@
 #
 source ~/dev/newbashplot/bin/setup.sh
 
-typeset -i x=0
-displayPlot=Y
-  for n in {0..160}
+typeset -i nbp_x=0
+nbp_displayPlot=Y
+  for nbp_n in {0..160}
   do
 
 # Pixel Addressable Area coordinates
-      if (( (n/5) % 2 ))
+      if (( (nbp_n/5) % 2 ))
       then
-        _f_Plot ${n} ${n}
+        nbp_f_Plot ${nbp_n} ${nbp_n}
       else
-        _f_Plot ${n} ${n} off
+        nbp_f_Plot ${nbp_n} ${nbp_n} off
       fi
       
   done
 
-  _f_Show
+nbp_f_Show
