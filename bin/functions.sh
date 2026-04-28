@@ -43,7 +43,7 @@ nbp_CAAC[${nbp_caaX},${nbp_caaY}]="${nbp_unicodeChar}"
 # If the system-wide variable displPlot is set, output the plot NOW.
   if [ ! -z "${nbp_displayPlot}" ]
   then
-	  echo "${nbp_tputCUP[${nbp_caaY},${nbp_caaX}]:=$(tput cup ${nbp_caaY} ${nbp_caaX})}${nbp_unicodeChar}"
+	  echo -n "${nbp_tputCUP[${nbp_caaY},${nbp_caaX}]:=$(tput cup ${nbp_caaY} ${nbp_caaX})}${nbp_unicodeChar}"
   fi
 }
 

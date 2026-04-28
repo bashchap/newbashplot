@@ -10,9 +10,11 @@ nbp_Data=${nbp_Base}/data
 typeset -i nbp_caaX=0 nbp_caaY=0 nbp_paaX=0 nbp_paaY=0 nbp_vbiX=0 nbp_vbiY=0 nbp_vbi=0 nbp_oldVbi=0 nbp_codePoint=0
 typeset -i nbp_widthBraille=2 nbp_heightBraille=4
 
-typeset -i nbp_PAAW=160 nbp_PAAH=96
-typeset -i nbp_CAAW=nbp_PAAW/nbp_widthBraille
-typeset -i nbp_CAAH=nbp_PAAH/nbp_heightBraille
+typeset -i nbp_CAAW=$(tput cols)
+typeset -i nbp_CAAH=$(tput lines)
+
+typeset -i nbp_PAAW=$((nbp_CAAW*nbp_widthBraille))
+typeset -i nbp_PAAH=$((nbp_CAAH*nbp_heightBraille))
 
 typeset -i nbp_CBC=${nbp_widthBraille}		# Character Block Columns
 typeset -i nbp_CBR=${nbp_heightBraille}		# Character Block Rows
