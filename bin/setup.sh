@@ -17,10 +17,14 @@ typeset -i CAAH=PAAH/heightBraille
 typeset -i CBC=${widthBraille}		# Character Block Columns
 typeset -i CBR=${heightBraille}		# Character Block Rows
 
+# Global variables
+displayPlot=""
+
 # Global associative/ 2D arrays
 # CAAV is the Cursor Addressable Area for Virtual Bitmask
 # CAAC is the Cursor Addressable Area for Characters
-declare -A CAAV CAAC
+# tputCUP is a cache for tput row and column control codes
+declare -A CAAV CAAC tputCUP
 
 # Configuration Files
 source ${VirtualBitmap:=${Cfg}/VROBI-braille.cfg}

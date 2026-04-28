@@ -41,7 +41,7 @@ oldVbi=${CAAV[${caaX},${caaY}]:=0}
 # If the option to turn the pixel off has been selected...
   if [ "${_f_Plot_OPT}" = "off" ]
   then
-	  vbi=$((vbi^255&oldVbi)) # Turn off the specified pixel
+	  vbi=$(((vbi^255)&oldVbi)) # Turn off the specified pixel
   else
           vbi=$((vbi|oldVbi))	# Bitwise OR the calculated bit with the existing bits at the same CAA
   fi
@@ -49,10 +49,16 @@ oldVbi=${CAAV[${caaX},${caaY}]:=0}
 # Store the newly calculated VBI.
 CAAV[${caaX},${caaY}]=${vbi}
 # Store the associated unicode character after index translation
-CAAC[${caaX},${caaY}]="${uCodePoint[${VROBI[${vbi}]}]}"
+unicodeChar="${uCodePoint[${VROBI[${vbi}]}]}"
+CAAC[${caaX},${caaY}]="${unicodeChar}"
+# If the system-wide variable displPlot is set, output the plot NOW.
+  if [ ! -z "${displayPlot}" ]
+  then
+	  echo "${tputCUP[${caaY},${caaX}]:=$(tput cup ${caaY} ${caaX})}${unicodeChar}"
+  fi
 }
 
-
+# Output the plot
 _f_Show() {
 	typeset -i x=0 y=0
 	while [ $y -lt $CAAH ]
