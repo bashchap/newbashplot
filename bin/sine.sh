@@ -31,6 +31,7 @@ send2Calc "
   define int(x) { auto os;os=scale;scale=0;x/=1;scale=os;return(x) }
 "
 
+tputHome=$(tput home)
 
 clear
 
@@ -41,9 +42,9 @@ declare -i xOff=2 yOff=40
 
 declare -i xSteps=1 ySteps=1
 declare -i xSpace=2 ySpace=2
-declare -i r=255 g=128 b=64 rD=-1 gD=1 bD=-1
+declare -i r=64 g=128 b=255 rD=-1 gD=1 bD=-1
 declare -i oR=r oG=g oB=b oRD=rD oGD=gD oBD=bD
-declare -i rS=-2 gS=4 bS=5
+declare -i rS=-4 gS=2 bS=-3
 declare -A xPos yPos
 
 echo "
@@ -56,27 +57,25 @@ until [ -f /tmp/go ] ; do sleep 0.1 ; : ; done
     rD=$oRD gD=$oGD bD=$oBD
       [ $((r+(rD*rS))) -lt 0 -o $((r+(rD*rS))) -gt 255 ] && rD=-rD
       [ $((g+(gD*gS))) -lt 0 -o $((g+(gD*gS))) -gt 255 ] && gD=-gD
-      [ $((b+(bD*bS))) -lt 0 -o $((b+(bD*bS))) -gt 255 ] && kbD=-bD
+      [ $((b+(bD*bS))) -lt 0 -o $((b+(bD*bS))) -gt 255 ] && bD=-bD
     r+=$((rD*rS)) g+=$((gD*gS)) b+=$((bD*bS))
     oR=$r oB=$b oG=$g oRD=$rD oGB=$gD oBD=$bD
 
 
       for ((y=1; y<180; y+=ySteps))
       do
-#_PLOT_pLog Inner: $r $g $b
           [ $((r+(rD*rS))) -lt 0 -o $((r+(rD*rS))) -gt 255 ] && rD=-rD
           [ $((g+(gD*gS))) -lt 0 -o $((g+(gD*gS))) -gt 255 ] && gD=-gD
           [ $((b+(bD*bS))) -lt 0 -o $((b+(bD*bS))) -gt 255 ] && bD=-bD
         r+=$((rD*rS)) g+=$((gD*gS)) b+=$((bD*bS))
           for ((x=0; x<180; x+=xSteps))
           do
-		  if (( ((x+y+SECONDS+(y%20)+(x%20))/20) % 2 ))
+		  if (( ((x+y+(y%20)+(x%20))/20) % 2 ))
 		  then
 			  PlotOnOff=off
 		  else
 			  PlotOnOff=""
 		  fi
-#		  echo $PlotOnOff
 
             xPos[$x,$y]=${xPos[$x,$y]:=$(Calc "int(${xOff}+${x}+${y}/1.5)")}
             yPos[$x,$y]=${yPos[$x,$y]:=$(Calc "int($y/10+(s((($x+$y)*3+$x)*pir)*((90-$y)/3))+$yOff+((($y/5)+($x/10))*$ySpace))")}   
