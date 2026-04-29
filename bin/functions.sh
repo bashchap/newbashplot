@@ -38,12 +38,16 @@ nbp_oldVbi=${nbp_CAAV[${nbp_caaX},${nbp_caaY}]:=0}
 # Store the newly calculated VBI.
 nbp_CAAV[${nbp_caaX},${nbp_caaY}]=${nbp_vbi}
 # Store the associated unicode character after index translation
-nbp_unicodeChar="${nbp_uCodePoint[${nbp_VROBI[${nbp_vbi}]}]}"
-nbp_CAAC[${nbp_caaX},${nbp_caaY}]="${nbp_unicodeChar}"
+#nbp_unicodeChar="${nbp_uCodePoint[${nbp_VROBI[${nbp_vbi}]}]}"
+nbp_vbi2char="${nbp_VROBI[${nbp_vbi}]}"
+#echo "-$nbp_vbi--${nbp_vbi2char}---" ; return
+nbp_CAAC[${nbp_caaX},${nbp_caaY}]="${nbp_vbi2char}"
+#nbp_CAAC[${nbp_caaX},${nbp_caaY}]="${nbp_unicodeChar}"
 # If the system-wide variable displPlot is set, output the plot NOW.
   if [ ! -z "${nbp_displayPlot}" ]
   then
-	  echo -n "${nbp_tputCUP[${nbp_caaY},${nbp_caaX}]:=$(tput cup ${nbp_caaY} ${nbp_caaX})}${nbp_unicodeChar}"
+#	  echo -n "${nbp_tputCUP[${nbp_caaY},${nbp_caaX}]:=$(tput cup ${nbp_caaY} ${nbp_caaX})}${nbp_unicodeChar}"
+	  echo -n "${nbp_tputCUP[${nbp_caaY},${nbp_caaX}]:=$(tput cup ${nbp_caaY} ${nbp_caaX})}${nbp_vbi2char}"
   fi
 }
 

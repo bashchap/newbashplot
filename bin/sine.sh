@@ -48,7 +48,7 @@ declare -i rS=-4 gS=2 bS=-3
 declare -A xPos yPos
 
 echo "
-> Waiting for file /tmp.go to exist before I'll start..."
+> Waiting for file /tmp/go to exist before I'll start..."
 until [ -f /tmp/go ] ; do sleep 0.1 ; : ; done
 
   while SECONDS=0

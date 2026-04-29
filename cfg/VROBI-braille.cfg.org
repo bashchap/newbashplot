@@ -1,0 +1,332 @@
+# Created by Tara Ram on Sunday 26th April 2026, Delhi, India.
+#
+# I'm documenting this because I'm becoming very forgetful. It sucks.
+#
+# Purpose of this file is to provide an array that can be sourced.
+# The VROBI array maps the positioning of Braille dots as they are
+# defined in their font into a more structured order, creating a 
+# simplified and deterministic access to a required pattern.
+# 
+# E.g.
+# In the Braille font unicode definition, each box below represents a Braille dot position:
+#
+#	-------------	  
+# 	|   1 |   8 |	  
+#	-------------	  
+# 	|   2 |  16 |	  
+#	-------------	  
+# 	|   4 |  32 |	  
+#	-------------	  
+# 	|  64 | 128 |	  
+# 	------------- 	  
+#
+# The values in the boxes are bitmask values.
+#
+# E.g.
+# The sum of values 1+2+4+64+128 = 199, which represents an L shape.
+# 10240 (decimal of x2800) is the unicode Braille font base start.
+# 10240 + 199 = 10439, which is the unicode font character '⣇'.
+#
+# This mapping is not convenient for determining dot positions when plotting.
+# For any pixel mapping, the VROBI array points to the actual system mapping.
+# A much more convenient dot to bit pattern would be this:
+#
+#      0     1
+#   -------------	  
+# 0 |   1 |  16 |	  
+#   -------------	  
+# 1 |   2 |  32 |	  
+#   -------------	  
+# 2 |   4 |  64 |	  
+#   -------------	  
+# 3 |   8 | 128 |	  
+#   ------------- 	  
+#
+# It's convenient because the Braille patterns exist in a grid of 2 columns and 4 rows.
+# With this mapping, it's straight forward to determine what Braille point to select
+# with a simple calculation, e.g if a dot was required at column 1 row 2, that maps to 64.
+# 10240 + 64 = 10304, which is character '⠠'.
+#
+# The calculation to do this is straight forward.  If you have a column and row point:
+#
+# 	bitmap= (2 ** y) << ( x * 4)
+#
+# If you have an existing bitmask at the same Cursor Addressable Area, you just need to
+# bitwise OR it with the new one to generate the new Braille character.
+#
+# With this in mind, the indexed array VROBI has been created.  
+# The index is the bitmask, and the element is the translation/ map/ index to the real unicode
+# codepoint in uCodePoint array where the element is the actual unicode character you want.
+#
+# VROBI = Virtual Raster-Ordered Bit Index	  
+# Index = VROBI	  
+# Element = Associated Braille character	  
+#	  
+# VROBI mapping         Character Font Mapping	  
+# ------------- 	-------------	  
+# |   1 |  16 |  	|   1 |   8 |	  
+# ------------- 	-------------	  
+# |   2 |  32 |  	|   2 |  16 |	  
+# ------------- 	-------------	  
+# |   4 |  64 |  	|   4 |  32 |	  
+# ------------- 	-------------	  
+# |   8 | 128 |  	|  64 | 128 |	  
+# -------------  	------------- 	  
+#	  
+#	        # Referenced char from index
+nbp_VROBI[0]=0	#  
+nbp_VROBI[1]=1	# ⠁
+nbp_VROBI[2]=2	# ⠂
+nbp_VROBI[3]=3	# ⠃
+nbp_VROBI[4]=4	# ⠄
+nbp_VROBI[5]=5	# ⠅
+nbp_VROBI[6]=6	# ⠆
+nbp_VROBI[7]=7	# ⠇
+nbp_VROBI[8]=64	# ⡀
+nbp_VROBI[9]=65	# ⡁
+nbp_VROBI[10]=66	# ⡂
+nbp_VROBI[11]=67	# ⡃
+nbp_VROBI[12]=68	# ⡄
+nbp_VROBI[13]=69	# ⡅
+nbp_VROBI[14]=70	# ⡆
+nbp_VROBI[15]=71	# ⡇
+nbp_VROBI[16]=8	# ⠈
+nbp_VROBI[17]=9	# ⠉
+nbp_VROBI[18]=10	# ⠊
+nbp_VROBI[19]=11	# ⠋
+nbp_VROBI[20]=12	# ⠌
+nbp_VROBI[21]=13	# ⠍
+nbp_VROBI[22]=14	# ⠎
+nbp_VROBI[23]=15	# ⠏
+nbp_VROBI[24]=72	# ⡈
+nbp_VROBI[25]=73	# ⡉
+nbp_VROBI[26]=74	# ⡊
+nbp_VROBI[27]=75	# ⡋
+nbp_VROBI[28]=76	# ⡌
+nbp_VROBI[29]=77	# ⡍
+nbp_VROBI[30]=78	# ⡎
+nbp_VROBI[31]=79	# ⡏
+nbp_VROBI[32]=16	# ⠐
+nbp_VROBI[33]=17	# ⠑
+nbp_VROBI[34]=18	# ⠒
+nbp_VROBI[35]=19	# ⠓
+nbp_VROBI[36]=20	# ⠔
+nbp_VROBI[37]=21	# ⠕
+nbp_VROBI[38]=22	# ⠖
+nbp_VROBI[39]=23	# ⠗
+nbp_VROBI[40]=80	# ⡐
+nbp_VROBI[41]=81	# ⡑
+nbp_VROBI[42]=82	# ⡒
+nbp_VROBI[43]=83	# ⡓
+nbp_VROBI[44]=84	# ⡔
+nbp_VROBI[45]=85	# ⡕
+nbp_VROBI[46]=86	# ⡖
+nbp_VROBI[47]=87	# ⡗
+nbp_VROBI[48]=24	# ⠘
+nbp_VROBI[49]=25	# ⠙
+nbp_VROBI[50]=26	# ⠚
+nbp_VROBI[51]=27	# ⠛
+nbp_VROBI[52]=28	# ⠜
+nbp_VROBI[53]=29	# ⠝
+nbp_VROBI[54]=30	# ⠞
+nbp_VROBI[55]=31	# ⠟
+nbp_VROBI[56]=88	# ⡘
+nbp_VROBI[57]=89	# ⡙
+nbp_VROBI[58]=90	# ⡚
+nbp_VROBI[59]=91	# ⡛
+nbp_VROBI[60]=92	# ⡜
+nbp_VROBI[61]=93	# ⡝
+nbp_VROBI[62]=94	# ⡞
+nbp_VROBI[63]=95	# ⡟
+nbp_VROBI[64]=32	# ⠠
+nbp_VROBI[65]=33	# ⠡
+nbp_VROBI[66]=34	# ⠢
+nbp_VROBI[67]=35	# ⠣
+nbp_VROBI[68]=36	# ⠤
+nbp_VROBI[69]=37	# ⠥
+nbp_VROBI[70]=38	# ⠦
+nbp_VROBI[71]=39	# ⠧
+nbp_VROBI[72]=96	# ⡠
+nbp_VROBI[73]=97	# ⡡
+nbp_VROBI[74]=98	# ⡢
+nbp_VROBI[75]=99	# ⡣
+nbp_VROBI[76]=100	# ⡤
+nbp_VROBI[77]=101	# ⡥
+nbp_VROBI[78]=102	# ⡦
+nbp_VROBI[79]=103	# ⡧
+nbp_VROBI[80]=40	# ⠨
+nbp_VROBI[81]=41	# ⠩
+nbp_VROBI[82]=42	# ⠪
+nbp_VROBI[83]=43	# ⠫
+nbp_VROBI[84]=44	# ⠬
+nbp_VROBI[85]=45	# ⠭
+nbp_VROBI[86]=46	# ⠮
+nbp_VROBI[87]=47	# ⠯
+nbp_VROBI[88]=104	# ⡨
+nbp_VROBI[89]=105	# ⡩
+nbp_VROBI[90]=106	# ⡪
+nbp_VROBI[91]=107	# ⡫
+nbp_VROBI[92]=108	# ⡬
+nbp_VROBI[93]=109	# ⡭
+nbp_VROBI[94]=110	# ⡮
+nbp_VROBI[95]=111	# ⡯
+nbp_VROBI[96]=48	# ⠰
+nbp_VROBI[97]=49	# ⠱
+nbp_VROBI[98]=50	# ⠲
+nbp_VROBI[99]=51	# ⠳
+nbp_VROBI[100]=52	# ⠴
+nbp_VROBI[101]=53	# ⠵
+nbp_VROBI[102]=54	# ⠶
+nbp_VROBI[103]=55	# ⠷
+nbp_VROBI[104]=112	# ⡰
+nbp_VROBI[105]=113	# ⡱
+nbp_VROBI[106]=114	# ⡲
+nbp_VROBI[107]=115	# ⡳
+nbp_VROBI[108]=116	# ⡴
+nbp_VROBI[109]=117	# ⡵
+nbp_VROBI[110]=118	# ⡶
+nbp_VROBI[111]=119	# ⡷
+nbp_VROBI[112]=56	# ⠸
+nbp_VROBI[113]=57	# ⠹
+nbp_VROBI[114]=58	# ⠺
+nbp_VROBI[115]=59	# ⠻
+nbp_VROBI[116]=60	# ⠼
+nbp_VROBI[117]=61	# ⠽
+nbp_VROBI[118]=62	# ⠾
+nbp_VROBI[119]=63	# ⠿
+nbp_VROBI[120]=120	# ⡸
+nbp_VROBI[121]=121	# ⡹
+nbp_VROBI[122]=122	# ⡺
+nbp_VROBI[123]=123	# ⡻
+nbp_VROBI[124]=124	# ⡼
+nbp_VROBI[125]=125	# ⡽
+nbp_VROBI[126]=126	# ⡾
+nbp_VROBI[127]=127	# ⡿
+nbp_VROBI[128]=128	# ⢀
+nbp_VROBI[129]=129	# ⢁
+nbp_VROBI[130]=130	# ⢂
+nbp_VROBI[131]=131	# ⢃
+nbp_VROBI[132]=132	# ⢄
+nbp_VROBI[133]=133	# ⢅
+nbp_VROBI[134]=134	# ⢆
+nbp_VROBI[135]=135	# ⢇
+nbp_VROBI[136]=192	# ⣀
+nbp_VROBI[137]=193	# ⣁
+nbp_VROBI[138]=194	# ⣂
+nbp_VROBI[139]=195	# ⣃
+nbp_VROBI[140]=196	# ⣄
+nbp_VROBI[141]=197	# ⣅
+nbp_VROBI[142]=198	# ⣆
+nbp_VROBI[143]=199	# ⣇
+nbp_VROBI[144]=136	# ⢈
+nbp_VROBI[145]=137	# ⢉
+nbp_VROBI[146]=138	# ⢊
+nbp_VROBI[147]=139	# ⢋
+nbp_VROBI[148]=140	# ⢌
+nbp_VROBI[149]=141	# ⢍
+nbp_VROBI[150]=142	# ⢎
+nbp_VROBI[151]=143	# ⢏
+nbp_VROBI[152]=200	# ⣈
+nbp_VROBI[153]=201	# ⣉
+nbp_VROBI[154]=202	# ⣊
+nbp_VROBI[155]=203	# ⣋
+nbp_VROBI[156]=204	# ⣌
+nbp_VROBI[157]=205	# ⣍
+nbp_VROBI[158]=206	# ⣎
+nbp_VROBI[159]=207	# ⣏
+nbp_VROBI[160]=144	# ⢐
+nbp_VROBI[161]=145	# ⢑
+nbp_VROBI[162]=146	# ⢒
+nbp_VROBI[163]=147	# ⢓
+nbp_VROBI[164]=148	# ⢔
+nbp_VROBI[165]=149	# ⢕
+nbp_VROBI[166]=150	# ⢖
+nbp_VROBI[167]=151	# ⢗
+nbp_VROBI[168]=208	# ⣐
+nbp_VROBI[169]=209	# ⣑
+nbp_VROBI[170]=210	# ⣒
+nbp_VROBI[171]=211	# ⣓
+nbp_VROBI[172]=212	# ⣔
+nbp_VROBI[173]=213	# ⣕
+nbp_VROBI[174]=214	# ⣖
+nbp_VROBI[175]=215	# ⣗
+nbp_VROBI[176]=152	# ⢘
+nbp_VROBI[177]=153	# ⢙
+nbp_VROBI[178]=154	# ⢚
+nbp_VROBI[179]=155	# ⢛
+nbp_VROBI[180]=156	# ⢜
+nbp_VROBI[181]=157	# ⢝
+nbp_VROBI[182]=158	# ⢞
+nbp_VROBI[183]=159	# ⢟
+nbp_VROBI[184]=216	# ⣘
+nbp_VROBI[185]=217	# ⣙
+nbp_VROBI[186]=218	# ⣚
+nbp_VROBI[187]=219	# ⣛
+nbp_VROBI[188]=220	# ⣜
+nbp_VROBI[189]=221	# ⣝
+nbp_VROBI[190]=222	# ⣞
+nbp_VROBI[191]=223	# ⣟
+nbp_VROBI[192]=160	# ⢠
+nbp_VROBI[193]=161	# ⢡
+nbp_VROBI[194]=162	# ⢢
+nbp_VROBI[195]=163	# ⢣
+nbp_VROBI[196]=164	# ⢤
+nbp_VROBI[197]=165	# ⢥
+nbp_VROBI[198]=166	# ⢦
+nbp_VROBI[199]=167	# ⢧
+nbp_VROBI[200]=224	# ⣠
+nbp_VROBI[201]=225	# ⣡
+nbp_VROBI[202]=226	# ⣢
+nbp_VROBI[203]=227	# ⣣
+nbp_VROBI[204]=228	# ⣤
+nbp_VROBI[205]=229	# ⣥
+nbp_VROBI[206]=230	# ⣦
+nbp_VROBI[207]=231	# ⣧
+nbp_VROBI[208]=168	# ⢨
+nbp_VROBI[209]=169	# ⢩
+nbp_VROBI[210]=170	# ⢪
+nbp_VROBI[211]=171	# ⢫
+nbp_VROBI[212]=172	# ⢬
+nbp_VROBI[213]=173	# ⢭
+nbp_VROBI[214]=174	# ⢮
+nbp_VROBI[215]=175	# ⢯
+nbp_VROBI[216]=232	# ⣨
+nbp_VROBI[217]=233	# ⣩
+nbp_VROBI[218]=234	# ⣪
+nbp_VROBI[219]=235	# ⣫
+nbp_VROBI[220]=236	# ⣬
+nbp_VROBI[221]=237	# ⣭
+nbp_VROBI[222]=238	# ⣮
+nbp_VROBI[223]=239	# ⣯
+nbp_VROBI[224]=176	# ⢰
+nbp_VROBI[225]=177	# ⢱
+nbp_VROBI[226]=178	# ⢲
+nbp_VROBI[227]=179	# ⢳
+nbp_VROBI[228]=180	# ⢴
+nbp_VROBI[229]=181	# ⢵
+nbp_VROBI[230]=182	# ⢶
+nbp_VROBI[231]=183	# ⢷
+nbp_VROBI[232]=240	# ⣰
+nbp_VROBI[233]=241	# ⣱
+nbp_VROBI[234]=242	# ⣲
+nbp_VROBI[235]=243	# ⣳
+nbp_VROBI[236]=244	# ⣴
+nbp_VROBI[237]=245	# ⣵
+nbp_VROBI[238]=246	# ⣶
+nbp_VROBI[239]=247	# ⣷
+nbp_VROBI[240]=184	# ⢸
+nbp_VROBI[241]=185	# ⢹
+nbp_VROBI[242]=186	# ⢺
+nbp_VROBI[243]=187	# ⢻
+nbp_VROBI[244]=188	# ⢼
+nbp_VROBI[245]=189	# ⢽
+nbp_VROBI[246]=190	# ⢾
+nbp_VROBI[247]=191	# ⢿
+nbp_VROBI[248]=248	# ⣸
+nbp_VROBI[249]=249	# ⣹
+nbp_VROBI[250]=250	# ⣺
+nbp_VROBI[251]=251	# ⣻
+nbp_VROBI[252]=252	# ⣼
+nbp_VROBI[253]=253	# ⣽
+nbp_VROBI[254]=254	# ⣾
+nbp_VROBI[255]=255	# ⣿
