@@ -29,7 +29,8 @@ nbp_displayPlot=""
 declare -A nbp_CAAV nbp_CAAC nbp_tputCUP
 
 # Configuration Files
-source ${nbp_virtualBitmap:=${nbp_Cfg}/VROBI-braille-new.cfg}
+source ${nbp_virtualBitmap:=${nbp_Cfg}/nbp_VROBI_braille_visual_octant_assignments.txt}
+#source ${nbp_virtualBitmap:=${nbp_Cfg}/VROBI-braille-new.cfg}
 #source ${nbp_codePoints:=${nbp_Cfg}/UnicodeCodePoint-x2800-x100-x28ff.cfg}
 
 
