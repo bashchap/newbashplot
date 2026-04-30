@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>NewBashPlot Font Inspection</title>
+<style>
+@font-face {
+  font-family: "NewBashPlot";
+  src: url("./NewBashPlot.ttf") format("truetype");
+}
+body {
+  background: #202020;
+  color: #ddd;
+  font-family: sans-serif;
+  padding: 20px;
+}
+table {
+  border-collapse: collapse;
+  font-size: 14px;
+}
+td, th {
+  border: 1px solid #555;
+  padding: 6px 10px;
+  text-align: center;
+}
+.glyph {
+  font-family: "NewBashPlot";
+  font-size: 48px;
+  line-height: 1;
+  color: #00ff66;
+  background: #000;
+}
+.code {
+  font-family: monospace;
+  color: #ccc;
+}
+</style>
+</head>
+<body>
+<h1>NewBashPlot Font Inspection</h1>
+<p>This page loads <code>NewBashPlot.ttf</code> directly from the same directory. The font does not need to be installed.</p>
+
+<table>
+<tr>
+<th>Bitmask</th>
+<th>Code point</th>
+<th>Glyph</th>
+</tr>
+<script>
+for (let i = 0; i < 256; i++) {
+  const cp = 0xE000 + i;
+  document.write(
+    "<tr>" +
+    "<td class='code'>" + i + "</td>" +
+    "<td class='code'>U+" + cp.toString(16).toUpperCase().padStart(4, "0") + "</td>" +
+    "<td class='glyph'>&#" + cp + ";</td>" +
+    "</tr>"
+  );
+}
+</script>
+</table>
+</body>
+</html>

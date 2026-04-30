@@ -1,0 +1,810 @@
+NewBashPlot font diagnostic report
+Working directory: /home/tara/dev/newbashplot/bin
+
+================================================================================
+Environment
+================================================================================
+Thu Apr 30 08:05:53 PM IST 2026
+Linux vmfm1 6.8.0-110-generic #110-Ubuntu SMP PREEMPT_DYNAMIC Thu Mar 19 17:16:23 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux
+fontconfig version 2.15.0
+4.46.0
+
+================================================================================
+FONT: ./build/NewBashPlot.ttf
+================================================================================
+File size: 18164 bytes
+
+================================================================================
+fontconfig: fc-query
+================================================================================
+Pattern has 28 elts (size 32)
+	family: "NewBashPlot"(s)
+	familylang: "en"(s)
+	style: "Regular"(s)
+	stylelang: "en"(s)
+	fullname: "NewBashPlot"(s)
+	fullnamelang: "en"(s)
+	slant: 0(i)(s)
+	weight: 80(f)(s)
+	width: 100(f)(s)
+	spacing: 100(i)(s)
+	foundry: "PfEd"(s)
+	file: "./build/NewBashPlot.ttf"(s)
+	index: 0(i)(s)
+	outline: True(s)
+	scalable: True(s)
+	charset: 
+	00e0: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+(s)
+	lang: (s)
+	fontversion: 65536(i)(s)
+	fontformat: "TrueType"(s)
+	decorative: False(s)
+	postscriptname: "NewBashPlot"(s)
+	color: False(s)
+	symbol: False(s)
+	variable: False(s)
+	fonthashint: False(s)
+	order: 0(i)(s)
+	namedinstance: False(s)
+	fontwrapper: "SFNT"(s)
+
+================================================================================
+fontconfig: fc-scan
+================================================================================
+Pattern has 28 elts (size 32)
+	family: "NewBashPlot"(s)
+	familylang: "en"(s)
+	style: "Regular"(s)
+	stylelang: "en"(s)
+	fullname: "NewBashPlot"(s)
+	fullnamelang: "en"(s)
+	slant: 0(i)(s)
+	weight: 80(f)(s)
+	width: 100(f)(s)
+	spacing: 100(i)(s)
+	foundry: "PfEd"(s)
+	file: "./build/NewBashPlot.ttf"(s)
+	index: 0(i)(s)
+	outline: True(s)
+	scalable: True(s)
+	charset: 
+	00e0: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+(s)
+	lang: (s)
+	fontversion: 65536(i)(s)
+	fontformat: "TrueType"(s)
+	decorative: False(s)
+	postscriptname: "NewBashPlot"(s)
+	color: False(s)
+	symbol: False(s)
+	variable: False(s)
+	fonthashint: False(s)
+	order: 0(i)(s)
+	namedinstance: False(s)
+	fontwrapper: "SFNT"(s)
+
+================================================================================
+fontconfig: fc-match by family
+================================================================================
+NewBashPlot.ttf: "NewBashPlot" "Regular"
+
+================================================================================
+TrueType tables
+================================================================================
+Tables: GlyphOrder head hhea maxp OS/2 hmtx cmap loca glyf name post gasp FFTM GDEF
+
+================================================================================
+head
+================================================================================
+tableVersion: 1.0
+fontRevision: 1.0
+checkSumAdjustment: 2870299509
+magicNumber: 1594834165
+flags: 11
+unitsPerEm: 1600
+xMin: 0
+yMin: 0
+xMax: 800
+yMax: 1600
+macStyle: 0
+lowestRecPPEM: 8
+fontDirectionHint: 2
+indexToLocFormat: 0
+glyphDataFormat: 0
+
+================================================================================
+hhea
+================================================================================
+tableVersion: 65536
+ascent: 1600
+descent: 0
+lineGap: 144
+advanceWidthMax: 800
+minLeftSideBearing: 0
+minRightSideBearing: 0
+xMaxExtent: 800
+caretSlopeRise: 1
+caretSlopeRun: 0
+numberOfHMetrics: 4
+
+================================================================================
+OS/2
+================================================================================
+version: 4
+xAvgCharWidth: 800
+usWeightClass: 400
+usWidthClass: 5
+fsType: 0
+ySubscriptXSize: 1040
+ySubscriptYSize: 1120
+ySuperscriptXSize: 1040
+ySuperscriptYSize: 1120
+yStrikeoutSize: 79
+yStrikeoutPosition: 414
+sTypoAscender: 1600
+sTypoDescender: 0
+sTypoLineGap: 144
+usWinAscent: 1600
+usWinDescent: 0
+fsSelection: 128
+sxHeight: 0
+sCapHeight: 0
+usDefaultChar: 0
+usBreakChar: 32
+usMaxContext: 1
+
+================================================================================
+post
+================================================================================
+formatType: 2.0
+italicAngle: 0.0
+underlinePosition: -120
+underlineThickness: 80
+isFixedPitch: 1
+minMemType42: 0
+maxMemType42: 0
+minMemType1: 0
+maxMemType1: 0
+
+================================================================================
+maxp
+================================================================================
+tableVersion: 65536
+numGlyphs: 259
+maxPoints: 16
+maxContours: 3
+maxCompositePoints: 0
+maxCompositeContours: 0
+maxZones: 2
+maxTwilightPoints: 0
+maxStorage: 1
+maxFunctionDefs: 1
+maxInstructionDefs: 0
+maxStackElements: 64
+maxSizeOfInstructions: 0
+maxComponentElements: 0
+maxComponentDepth: 0
+
+================================================================================
+cmap coverage
+================================================================================
+best cmap entries: 256
+U+E000: nbp_000
+U+E001: nbp_001
+U+E002: nbp_002
+U+E003: nbp_003
+U+E00F: nbp_015
+U+E0F0: nbp_240
+U+E0FF: nbp_255
+
+================================================================================
+selected glyph metrics
+================================================================================
+U+E000 nbp_000: advanceWidth=800, leftSideBearing=0, bounds=(0, 0, 0, 0), contours=0
+U+E001 nbp_001: advanceWidth=800, leftSideBearing=0, bounds=(0, 1200, 400, 1600), contours=1
+U+E002 nbp_002: advanceWidth=800, leftSideBearing=0, bounds=(0, 800, 400, 1200), contours=1
+U+E003 nbp_003: advanceWidth=800, leftSideBearing=0, bounds=(0, 800, 400, 1600), contours=1
+U+E00F nbp_015: advanceWidth=800, leftSideBearing=0, bounds=(0, 0, 400, 1600), contours=1
+U+E0F0 nbp_240: advanceWidth=800, leftSideBearing=400, bounds=(400, 0, 800, 1600), contours=1
+U+E0FF nbp_255: advanceWidth=800, leftSideBearing=0, bounds=(0, 0, 800, 1600), contours=1
+
+================================================================================
+FONT: ./build/NewBashPlotOverfill.ttf
+================================================================================
+File size: 18828 bytes
+
+================================================================================
+fontconfig: fc-query
+================================================================================
+Pattern has 28 elts (size 32)
+	family: "NewBashPlotOverfill"(s)
+	familylang: "en"(s)
+	style: "Regular"(s)
+	stylelang: "en"(s)
+	fullname: "NewBashPlotOverfill"(s)
+	fullnamelang: "en"(s)
+	slant: 0(i)(s)
+	weight: 80(f)(s)
+	width: 100(f)(s)
+	spacing: 100(i)(s)
+	foundry: "PfEd"(s)
+	file: "./build/NewBashPlotOverfill.ttf"(s)
+	index: 0(i)(s)
+	outline: True(s)
+	scalable: True(s)
+	charset: 
+	00e0: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+(s)
+	lang: (s)
+	fontversion: 65536(i)(s)
+	fontformat: "TrueType"(s)
+	decorative: False(s)
+	postscriptname: "NewBashPlotOverfill"(s)
+	color: False(s)
+	symbol: False(s)
+	variable: False(s)
+	fonthashint: False(s)
+	order: 0(i)(s)
+	namedinstance: False(s)
+	fontwrapper: "SFNT"(s)
+
+================================================================================
+fontconfig: fc-scan
+================================================================================
+Pattern has 28 elts (size 32)
+	family: "NewBashPlotOverfill"(s)
+	familylang: "en"(s)
+	style: "Regular"(s)
+	stylelang: "en"(s)
+	fullname: "NewBashPlotOverfill"(s)
+	fullnamelang: "en"(s)
+	slant: 0(i)(s)
+	weight: 80(f)(s)
+	width: 100(f)(s)
+	spacing: 100(i)(s)
+	foundry: "PfEd"(s)
+	file: "./build/NewBashPlotOverfill.ttf"(s)
+	index: 0(i)(s)
+	outline: True(s)
+	scalable: True(s)
+	charset: 
+	00e0: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+(s)
+	lang: (s)
+	fontversion: 65536(i)(s)
+	fontformat: "TrueType"(s)
+	decorative: False(s)
+	postscriptname: "NewBashPlotOverfill"(s)
+	color: False(s)
+	symbol: False(s)
+	variable: False(s)
+	fonthashint: False(s)
+	order: 0(i)(s)
+	namedinstance: False(s)
+	fontwrapper: "SFNT"(s)
+
+================================================================================
+fontconfig: fc-match by family
+================================================================================
+NewBashPlotOverfill.ttf: "NewBashPlotOverfill" "Regular"
+
+================================================================================
+TrueType tables
+================================================================================
+Tables: GlyphOrder head hhea maxp OS/2 hmtx cmap loca glyf name post gasp FFTM GDEF
+
+================================================================================
+head
+================================================================================
+tableVersion: 1.0
+fontRevision: 1.0
+checkSumAdjustment: 3918008259
+magicNumber: 1594834165
+flags: 11
+unitsPerEm: 1600
+xMin: -120
+yMin: 0
+xMax: 920
+yMax: 1600
+macStyle: 0
+lowestRecPPEM: 8
+fontDirectionHint: 2
+indexToLocFormat: 0
+glyphDataFormat: 0
+
+================================================================================
+hhea
+================================================================================
+tableVersion: 65536
+ascent: 1600
+descent: 0
+lineGap: 144
+advanceWidthMax: 800
+minLeftSideBearing: -120
+minRightSideBearing: -120
+xMaxExtent: 920
+caretSlopeRise: 1
+caretSlopeRun: 0
+numberOfHMetrics: 4
+
+================================================================================
+OS/2
+================================================================================
+version: 4
+xAvgCharWidth: 800
+usWeightClass: 400
+usWidthClass: 5
+fsType: 0
+ySubscriptXSize: 1040
+ySubscriptYSize: 1120
+ySuperscriptXSize: 1040
+ySuperscriptYSize: 1120
+yStrikeoutSize: 79
+yStrikeoutPosition: 414
+sTypoAscender: 1600
+sTypoDescender: 0
+sTypoLineGap: 144
+usWinAscent: 1600
+usWinDescent: 0
+fsSelection: 128
+sxHeight: 0
+sCapHeight: 0
+usDefaultChar: 0
+usBreakChar: 32
+usMaxContext: 1
+
+================================================================================
+post
+================================================================================
+formatType: 2.0
+italicAngle: 0.0
+underlinePosition: -120
+underlineThickness: 80
+isFixedPitch: 1
+minMemType42: 0
+maxMemType42: 0
+minMemType1: 0
+maxMemType1: 0
+
+================================================================================
+maxp
+================================================================================
+tableVersion: 65536
+numGlyphs: 259
+maxPoints: 18
+maxContours: 2
+maxCompositePoints: 0
+maxCompositeContours: 0
+maxZones: 2
+maxTwilightPoints: 0
+maxStorage: 1
+maxFunctionDefs: 1
+maxInstructionDefs: 0
+maxStackElements: 64
+maxSizeOfInstructions: 0
+maxComponentElements: 0
+maxComponentDepth: 0
+
+================================================================================
+cmap coverage
+================================================================================
+best cmap entries: 256
+U+E000: nbp_000
+U+E001: nbp_001
+U+E002: nbp_002
+U+E003: nbp_003
+U+E00F: nbp_015
+U+E0F0: nbp_240
+U+E0FF: nbp_255
+
+================================================================================
+selected glyph metrics
+================================================================================
+U+E000 nbp_000: advanceWidth=800, leftSideBearing=0, bounds=(0, 0, 0, 0), contours=0
+U+E001 nbp_001: advanceWidth=800, leftSideBearing=-120, bounds=(-120, 1200, 520, 1600), contours=1
+U+E002 nbp_002: advanceWidth=800, leftSideBearing=-120, bounds=(-120, 800, 520, 1200), contours=1
+U+E003 nbp_003: advanceWidth=800, leftSideBearing=-120, bounds=(-120, 800, 520, 1600), contours=1
+U+E00F nbp_015: advanceWidth=800, leftSideBearing=-120, bounds=(-120, 0, 520, 1600), contours=1
+U+E0F0 nbp_240: advanceWidth=800, leftSideBearing=280, bounds=(280, 0, 920, 1600), contours=1
+U+E0FF nbp_255: advanceWidth=800, leftSideBearing=-120, bounds=(-120, 0, 920, 1600), contours=1
+
+================================================================================
+FONT: /home/tara/.local/share/fonts/NewBashPlot.ttf
+================================================================================
+File size: 18164 bytes
+
+================================================================================
+fontconfig: fc-query
+================================================================================
+Pattern has 28 elts (size 32)
+	family: "NewBashPlot"(s)
+	familylang: "en"(s)
+	style: "Regular"(s)
+	stylelang: "en"(s)
+	fullname: "NewBashPlot"(s)
+	fullnamelang: "en"(s)
+	slant: 0(i)(s)
+	weight: 80(f)(s)
+	width: 100(f)(s)
+	spacing: 100(i)(s)
+	foundry: "PfEd"(s)
+	file: "/home/tara/.local/share/fonts/NewBashPlot.ttf"(s)
+	index: 0(i)(s)
+	outline: True(s)
+	scalable: True(s)
+	charset: 
+	00e0: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+(s)
+	lang: (s)
+	fontversion: 65536(i)(s)
+	fontformat: "TrueType"(s)
+	decorative: False(s)
+	postscriptname: "NewBashPlot"(s)
+	color: False(s)
+	symbol: False(s)
+	variable: False(s)
+	fonthashint: False(s)
+	order: 0(i)(s)
+	namedinstance: False(s)
+	fontwrapper: "SFNT"(s)
+
+================================================================================
+fontconfig: fc-scan
+================================================================================
+Pattern has 28 elts (size 32)
+	family: "NewBashPlot"(s)
+	familylang: "en"(s)
+	style: "Regular"(s)
+	stylelang: "en"(s)
+	fullname: "NewBashPlot"(s)
+	fullnamelang: "en"(s)
+	slant: 0(i)(s)
+	weight: 80(f)(s)
+	width: 100(f)(s)
+	spacing: 100(i)(s)
+	foundry: "PfEd"(s)
+	file: "/home/tara/.local/share/fonts/NewBashPlot.ttf"(s)
+	index: 0(i)(s)
+	outline: True(s)
+	scalable: True(s)
+	charset: 
+	00e0: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+(s)
+	lang: (s)
+	fontversion: 65536(i)(s)
+	fontformat: "TrueType"(s)
+	decorative: False(s)
+	postscriptname: "NewBashPlot"(s)
+	color: False(s)
+	symbol: False(s)
+	variable: False(s)
+	fonthashint: False(s)
+	order: 0(i)(s)
+	namedinstance: False(s)
+	fontwrapper: "SFNT"(s)
+
+================================================================================
+fontconfig: fc-match by family
+================================================================================
+NewBashPlot.ttf: "NewBashPlot" "Regular"
+
+================================================================================
+TrueType tables
+================================================================================
+Tables: GlyphOrder head hhea maxp OS/2 hmtx cmap loca glyf name post gasp FFTM GDEF
+
+================================================================================
+head
+================================================================================
+tableVersion: 1.0
+fontRevision: 1.0
+checkSumAdjustment: 2870299509
+magicNumber: 1594834165
+flags: 11
+unitsPerEm: 1600
+xMin: 0
+yMin: 0
+xMax: 800
+yMax: 1600
+macStyle: 0
+lowestRecPPEM: 8
+fontDirectionHint: 2
+indexToLocFormat: 0
+glyphDataFormat: 0
+
+================================================================================
+hhea
+================================================================================
+tableVersion: 65536
+ascent: 1600
+descent: 0
+lineGap: 144
+advanceWidthMax: 800
+minLeftSideBearing: 0
+minRightSideBearing: 0
+xMaxExtent: 800
+caretSlopeRise: 1
+caretSlopeRun: 0
+numberOfHMetrics: 4
+
+================================================================================
+OS/2
+================================================================================
+version: 4
+xAvgCharWidth: 800
+usWeightClass: 400
+usWidthClass: 5
+fsType: 0
+ySubscriptXSize: 1040
+ySubscriptYSize: 1120
+ySuperscriptXSize: 1040
+ySuperscriptYSize: 1120
+yStrikeoutSize: 79
+yStrikeoutPosition: 414
+sTypoAscender: 1600
+sTypoDescender: 0
+sTypoLineGap: 144
+usWinAscent: 1600
+usWinDescent: 0
+fsSelection: 128
+sxHeight: 0
+sCapHeight: 0
+usDefaultChar: 0
+usBreakChar: 32
+usMaxContext: 1
+
+================================================================================
+post
+================================================================================
+formatType: 2.0
+italicAngle: 0.0
+underlinePosition: -120
+underlineThickness: 80
+isFixedPitch: 1
+minMemType42: 0
+maxMemType42: 0
+minMemType1: 0
+maxMemType1: 0
+
+================================================================================
+maxp
+================================================================================
+tableVersion: 65536
+numGlyphs: 259
+maxPoints: 16
+maxContours: 3
+maxCompositePoints: 0
+maxCompositeContours: 0
+maxZones: 2
+maxTwilightPoints: 0
+maxStorage: 1
+maxFunctionDefs: 1
+maxInstructionDefs: 0
+maxStackElements: 64
+maxSizeOfInstructions: 0
+maxComponentElements: 0
+maxComponentDepth: 0
+
+================================================================================
+cmap coverage
+================================================================================
+best cmap entries: 256
+U+E000: nbp_000
+U+E001: nbp_001
+U+E002: nbp_002
+U+E003: nbp_003
+U+E00F: nbp_015
+U+E0F0: nbp_240
+U+E0FF: nbp_255
+
+================================================================================
+selected glyph metrics
+================================================================================
+U+E000 nbp_000: advanceWidth=800, leftSideBearing=0, bounds=(0, 0, 0, 0), contours=0
+U+E001 nbp_001: advanceWidth=800, leftSideBearing=0, bounds=(0, 1200, 400, 1600), contours=1
+U+E002 nbp_002: advanceWidth=800, leftSideBearing=0, bounds=(0, 800, 400, 1200), contours=1
+U+E003 nbp_003: advanceWidth=800, leftSideBearing=0, bounds=(0, 800, 400, 1600), contours=1
+U+E00F nbp_015: advanceWidth=800, leftSideBearing=0, bounds=(0, 0, 400, 1600), contours=1
+U+E0F0 nbp_240: advanceWidth=800, leftSideBearing=400, bounds=(400, 0, 800, 1600), contours=1
+U+E0FF nbp_255: advanceWidth=800, leftSideBearing=0, bounds=(0, 0, 800, 1600), contours=1
+
+================================================================================
+FONT: /home/tara/.local/share/fonts/NewBashPlotOverfill.ttf
+================================================================================
+File size: 18828 bytes
+
+================================================================================
+fontconfig: fc-query
+================================================================================
+Pattern has 28 elts (size 32)
+	family: "NewBashPlotOverfill"(s)
+	familylang: "en"(s)
+	style: "Regular"(s)
+	stylelang: "en"(s)
+	fullname: "NewBashPlotOverfill"(s)
+	fullnamelang: "en"(s)
+	slant: 0(i)(s)
+	weight: 80(f)(s)
+	width: 100(f)(s)
+	spacing: 100(i)(s)
+	foundry: "PfEd"(s)
+	file: "/home/tara/.local/share/fonts/NewBashPlotOverfill.ttf"(s)
+	index: 0(i)(s)
+	outline: True(s)
+	scalable: True(s)
+	charset: 
+	00e0: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+(s)
+	lang: (s)
+	fontversion: 65536(i)(s)
+	fontformat: "TrueType"(s)
+	decorative: False(s)
+	postscriptname: "NewBashPlotOverfill"(s)
+	color: False(s)
+	symbol: False(s)
+	variable: False(s)
+	fonthashint: False(s)
+	order: 0(i)(s)
+	namedinstance: False(s)
+	fontwrapper: "SFNT"(s)
+
+================================================================================
+fontconfig: fc-scan
+================================================================================
+Pattern has 28 elts (size 32)
+	family: "NewBashPlotOverfill"(s)
+	familylang: "en"(s)
+	style: "Regular"(s)
+	stylelang: "en"(s)
+	fullname: "NewBashPlotOverfill"(s)
+	fullnamelang: "en"(s)
+	slant: 0(i)(s)
+	weight: 80(f)(s)
+	width: 100(f)(s)
+	spacing: 100(i)(s)
+	foundry: "PfEd"(s)
+	file: "/home/tara/.local/share/fonts/NewBashPlotOverfill.ttf"(s)
+	index: 0(i)(s)
+	outline: True(s)
+	scalable: True(s)
+	charset: 
+	00e0: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+(s)
+	lang: (s)
+	fontversion: 65536(i)(s)
+	fontformat: "TrueType"(s)
+	decorative: False(s)
+	postscriptname: "NewBashPlotOverfill"(s)
+	color: False(s)
+	symbol: False(s)
+	variable: False(s)
+	fonthashint: False(s)
+	order: 0(i)(s)
+	namedinstance: False(s)
+	fontwrapper: "SFNT"(s)
+
+================================================================================
+fontconfig: fc-match by family
+================================================================================
+NewBashPlotOverfill.ttf: "NewBashPlotOverfill" "Regular"
+
+================================================================================
+TrueType tables
+================================================================================
+Tables: GlyphOrder head hhea maxp OS/2 hmtx cmap loca glyf name post gasp FFTM GDEF
+
+================================================================================
+head
+================================================================================
+tableVersion: 1.0
+fontRevision: 1.0
+checkSumAdjustment: 3918008259
+magicNumber: 1594834165
+flags: 11
+unitsPerEm: 1600
+xMin: -120
+yMin: 0
+xMax: 920
+yMax: 1600
+macStyle: 0
+lowestRecPPEM: 8
+fontDirectionHint: 2
+indexToLocFormat: 0
+glyphDataFormat: 0
+
+================================================================================
+hhea
+================================================================================
+tableVersion: 65536
+ascent: 1600
+descent: 0
+lineGap: 144
+advanceWidthMax: 800
+minLeftSideBearing: -120
+minRightSideBearing: -120
+xMaxExtent: 920
+caretSlopeRise: 1
+caretSlopeRun: 0
+numberOfHMetrics: 4
+
+================================================================================
+OS/2
+================================================================================
+version: 4
+xAvgCharWidth: 800
+usWeightClass: 400
+usWidthClass: 5
+fsType: 0
+ySubscriptXSize: 1040
+ySubscriptYSize: 1120
+ySuperscriptXSize: 1040
+ySuperscriptYSize: 1120
+yStrikeoutSize: 79
+yStrikeoutPosition: 414
+sTypoAscender: 1600
+sTypoDescender: 0
+sTypoLineGap: 144
+usWinAscent: 1600
+usWinDescent: 0
+fsSelection: 128
+sxHeight: 0
+sCapHeight: 0
+usDefaultChar: 0
+usBreakChar: 32
+usMaxContext: 1
+
+================================================================================
+post
+================================================================================
+formatType: 2.0
+italicAngle: 0.0
+underlinePosition: -120
+underlineThickness: 80
+isFixedPitch: 1
+minMemType42: 0
+maxMemType42: 0
+minMemType1: 0
+maxMemType1: 0
+
+================================================================================
+maxp
+================================================================================
+tableVersion: 65536
+numGlyphs: 259
+maxPoints: 18
+maxContours: 2
+maxCompositePoints: 0
+maxCompositeContours: 0
+maxZones: 2
+maxTwilightPoints: 0
+maxStorage: 1
+maxFunctionDefs: 1
+maxInstructionDefs: 0
+maxStackElements: 64
+maxSizeOfInstructions: 0
+maxComponentElements: 0
+maxComponentDepth: 0
+
+================================================================================
+cmap coverage
+================================================================================
+best cmap entries: 256
+U+E000: nbp_000
+U+E001: nbp_001
+U+E002: nbp_002
+U+E003: nbp_003
+U+E00F: nbp_015
+U+E0F0: nbp_240
+U+E0FF: nbp_255
+
+================================================================================
+selected glyph metrics
+================================================================================
+U+E000 nbp_000: advanceWidth=800, leftSideBearing=0, bounds=(0, 0, 0, 0), contours=0
+U+E001 nbp_001: advanceWidth=800, leftSideBearing=-120, bounds=(-120, 1200, 520, 1600), contours=1
+U+E002 nbp_002: advanceWidth=800, leftSideBearing=-120, bounds=(-120, 800, 520, 1200), contours=1
+U+E003 nbp_003: advanceWidth=800, leftSideBearing=-120, bounds=(-120, 800, 520, 1600), contours=1
+U+E00F nbp_015: advanceWidth=800, leftSideBearing=-120, bounds=(-120, 0, 520, 1600), contours=1
+U+E0F0 nbp_240: advanceWidth=800, leftSideBearing=280, bounds=(280, 0, 920, 1600), contours=1
+U+E0FF nbp_255: advanceWidth=800, leftSideBearing=-120, bounds=(-120, 0, 920, 1600), contours=1
