@@ -1,5 +1,19 @@
 #!/bin/bash
+# Written by Tara Ram on 26th April 2026
 #
+# This file must be run first to setup the environment.
+# It can be sourced if you need to debug the environment after stopping the code.
+# All variables/ constants/ functions etc are prefixed by nbp_
+#
+# Optional parameter is the for the VROBI file:
+# 	By default the value assumed is 'default' otherwise can pass anything within reason.
+# 	VROBI config file is: VROBI-${optional parameter}.cfg
+#
+# 	Virtual Raster-Oriented Bitmask Index
+# 		Contains the bitmask index with each element being the unicode codepoint
+#
+nbp_vrobiOpt="${1:-default}"
+
 # PATHS
 nbp_Base=~/dev/newbashplot
 nbp_Bin=${nbp_Base}/bin
@@ -29,11 +43,9 @@ nbp_displayPlot=""
 declare -A nbp_CAAV nbp_CAAC nbp_tputCUP
 
 # Configuration Files
-source ${nbp_virtualBitmap:=${nbp_Cfg}/nbp_VROBI_braille_visual_octant_assignments.txt}
-#source ${nbp_virtualBitmap:=${nbp_Cfg}/VROBI-braille-new.cfg}
-#source ${nbp_codePoints:=${nbp_Cfg}/UnicodeCodePoint-x2800-x100-x28ff.cfg}
+source "${nbp_virtualBitmap:=${nbp_Cfg}/VROBI-${nbp_vrobiOpt}.cfg}"
 
-
+# Functions
 source ${nbp_Bin}/functions.sh
 
 

@@ -3,6 +3,7 @@
 # This source line MUST be the first line of any bash code the functions are used in, otherwise the $_
 # parameter will not be set accordingly and relative paths will not be set either
 source ~/dev/newbashplot/bin/setup.sh
+
 nbp_displayPlot=yes
 
 # turns off cursor
