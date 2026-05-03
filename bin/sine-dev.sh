@@ -74,12 +74,12 @@ PlotOnOff=""
         r+=$((rD*rS)) g+=$((gD*gS)) b+=$((bD*bS))
           for ((x=0; x<180; x+=xSteps))
           do
-		  if (( ((checkerBoardOffset+x+y+(y%20)+(x%20))/20) % 2 ))
-		  then
-			  PlotOnOff=off
-		  else
-			  PlotOnOff=""
-		  fi
+#		  if (( ((checkerBoardOffset+x+y+(y%20)+(x%20))/20) % 2 ))
+#		  then
+#			  PlotOnOff=off
+#		  else
+#			  PlotOnOff=""
+#		  fi
 
             xPos[$x,$y]=${xPos[$x,$y]:=$(Calc "int(${xOff}+${x}+${y}/1.5)")}
             yPos[$x,$y]=${yPos[$x,$y]:=$(Calc "int($y/10+(s((($x+$y)*3+$x)*pir)*((90-$y)/3))+$yOff+((($y/5)+($x/10))*$ySpace))")}   
@@ -90,4 +90,12 @@ PlotOnOff=""
       done
     tput home ; echo "$SECONDS   "
     checkerBoardOffset+=2
+#    echo "${nbp_CAAV[@]}" >nbp_CAAV.array
+#    echo "${nbp_CAAC[@]}" >nbp_CAAC.array
+#    set|grep 'nbp_CAAV=(' >nbp_CAAV.array
+#    set|grep 'nbp_CAAC=(' >nbp_CAAC.array
+# After your arrays are populated, export them like this:
+declare -p nbp_CAAV > nbp_CAAV.array
+declare -p nbp_CAAC > nbp_CAAC.array
+    exit
   done

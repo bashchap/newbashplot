@@ -31,7 +31,7 @@ SECONDS=0
           [ ${dX} -eq 0 -a ${dY} -eq 0 ] && continue
 	  dN=$((($RANDOM%(${maxLength})+(${minLength})+1)))
         dNC+=1
-         if [ ${SECONDS} -gt 10 ]
+         if [ ${SECONDS} -gt 05 ]
          then
            maxLength=$((($RANDOM%100)+1))
            minLength=$((($RANDOM%10)+1))
@@ -40,8 +40,10 @@ SECONDS=0
   	     for key in "${!nbp_CAAV[@]}"; do unset "nbp_CAAV[$key]" ; done
   	     for key in "${!nbp_CAAC[@]}"; do unset "nbp_CAAC[$key]" ; done
 
+	   sleep 5
            clear
            SECONDS=0
+
          fi
       fi
 
@@ -59,6 +61,6 @@ SECONDS=0
     nbp_f_Plot $xVM $yVM
     
     dN=$(($dN-1))
-#sleep 0.1
+#sleep 5
   done
 

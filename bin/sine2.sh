@@ -39,16 +39,13 @@ clear
 declare -i h=0 w=0 
 declare -i xPos=0
 declare -i x=0 y=0
-declare -i xOff=2 yOff=40
+declare -i xOff=60 yOff=50
 
 declare -i xSteps=1 ySteps=1
-declare -i xSpace=2 ySpace=2
-declare -i r=255 g=0 b=0 rD=-1 gD=1 bD=1
+declare -i r=64 g=128 b=192 rD=1 gD=1 bD=1
 declare -i oR=r oG=g oB=b oRD=rD oGD=gD oBD=bD
-declare -i rS=-4 gS=2 bS=3
+declare -i rS=-4 gS=2 bS=-3
 declare -A xPos yPos
-
-declare -i checkerBoardOffset=0
 
 echo "
 > Waiting for file /tmp/go to exist before I'll start..."
@@ -74,20 +71,29 @@ PlotOnOff=""
         r+=$((rD*rS)) g+=$((gD*gS)) b+=$((bD*bS))
           for ((x=0; x<180; x+=xSteps))
           do
-		  if (( ((checkerBoardOffset+x+y+(y%20)+(x%20))/20) % 2 ))
+		  if (( ((x+y+(y%20)+(x%20))/20) % 2 ))
 		  then
 			  PlotOnOff=off
 		  else
 			  PlotOnOff=""
 		  fi
 
-            xPos[$x,$y]=${xPos[$x,$y]:=$(Calc "int(${xOff}+${x}+${y}/1.5)")}
-            yPos[$x,$y]=${yPos[$x,$y]:=$(Calc "int($y/10+(s((($x+$y)*3+$x)*pir)*((90-$y)/3))+$yOff+((($y/5)+($x/10))*$ySpace))")}   
+#xPos[$x,$y]=${xPos[$x,$y]:=$(Calc "int(${xOff} + 90 + (${x}-${y})*0.5)")}
+#yPos[$x,$y]=${yPos[$x,$y]:=$(Calc "int(${yOff} + (${x}+${y})*0.15 - e(-((${x}-90)*(${x}-90)+(${y}-90)*(${y}-90))/1800)*35)")}
+
+#xPos[$x,$y]=${xPos[$x,$y]:=$(Calc "int(${xOff} + 90 + (${x}-${y})*0.5)")}
+#yPos[$x,$y]=${yPos[$x,$y]:=$(Calc "int(${yOff} + (${x}+${y})*0.15 - e(-((${x}-90)*(${x}-90)+(${y}-90)*(${y}-90))/1800)*(40+c(sqrt((${x}-90)*(${x}-90)+(${y}-90)*(${y}-90))*pir/8)*10))")}
+#xPos[$x,$y]=${xPos[$x,$y]:=$(Calc "int(${xOff} + 90 + (${x}-${y})*0.5)")}
+#yPos[$x,$y]=${yPos[$x,$y]:=$(Calc "int(${yOff} + (${x}+${y})*0.15 - e(-((${x}-90)*(${x}-90)+(${y}-90)*(${y}-90))/1800)*(40+c(sqrt((${x}-90)*(${x}-90)+(${y}-90)*(${y}-90))*pir/12)*10))")}
+
+xPos[$x,$y]=${xPos[$x,$y]:=$(Calc "int(${xOff} + 90 + (${x}-${y})*0.8)")}
+yPos[$x,$y]=${yPos[$x,$y]:=$(Calc "int(${yOff} + (${x}+${y})*0.22 - e(-((${x}-90)*(${x}-90)+(${y}-90)*(${y}-90))/2500)*(50+c(sqrt((${x}-90)*(${x}-90)+(${y}-90)*(${y}-90))*pir/8)*15))")}
+
             echo -ne "\033[38;2;$r;$g;${b}m"
             nbp_f_Plot ${xPos[$x,$y]} ${yPos[$x,$y]} ${PlotOnOff}
 
           done
       done
+#      nbp_f_Show
     tput home ; echo "$SECONDS   "
-    checkerBoardOffset+=2
   done

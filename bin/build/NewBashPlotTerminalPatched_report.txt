@@ -1,0 +1,111 @@
+NewBashPlotTerminal metrics patch report
+
+================================================================================
+BEFORE
+================================================================================
+FILE: ./build/NewBashPlotTerminal.ttf
+exists: True
+size: 22504
+
+head:
+  unitsPerEm: 1600
+  xMin: 0
+  yMin: -320
+  xMax: 800
+  yMax: 1280
+  lowestRecPPEM: 8
+  flags: 11
+
+hhea:
+  ascent: 2560
+  descent: -640
+  lineGap: 0
+  advanceWidthMax: 800
+  minLeftSideBearing: 0
+  minRightSideBearing: 0
+  xMaxExtent: 800
+  numberOfHMetrics: 4
+
+OS/2:
+  version: 4
+  xAvgCharWidth: 800
+  usWeightClass: 400
+  usWidthClass: 5
+  sTypoAscender: 2560
+  sTypoDescender: -640
+  sTypoLineGap: 0
+  usWinAscent: 2560
+  usWinDescent: 640
+  fsSelection: 128
+  usDefaultChar: 0
+  usBreakChar: 32
+  usMaxContext: 1
+
+post:
+  isFixedPitch: 1
+  underlinePosition: -120
+  underlineThickness: 80
+
+selected glyphs:
+  U+0020 ascii_20: advanceWidth=800, leftSideBearing=0, bounds=(0, 0, 0, 0)
+  U+0041 ascii_41: advanceWidth=800, leftSideBearing=144, bounds=(144, -32, 656, 992)
+  U+E000 nbp_000: advanceWidth=800, leftSideBearing=0, bounds=(0, 0, 0, 0)
+  U+E001 nbp_001: advanceWidth=800, leftSideBearing=0, bounds=(0, 880, 400, 1280)
+  U+E00F nbp_015: advanceWidth=800, leftSideBearing=0, bounds=(0, -320, 400, 1280)
+  U+E0F0 nbp_240: advanceWidth=800, leftSideBearing=400, bounds=(400, -320, 800, 1280)
+  U+E0FF nbp_255: advanceWidth=800, leftSideBearing=0, bounds=(0, -320, 800, 1280)
+
+================================================================================
+AFTER
+================================================================================
+FILE: ./build/NewBashPlotTerminalPatched.ttf
+exists: True
+size: 21992
+
+head:
+  unitsPerEm: 1600
+  xMin: 0
+  yMin: -320
+  xMax: 800
+  yMax: 1280
+  lowestRecPPEM: 8
+  flags: 11
+
+hhea:
+  ascent: 1280
+  descent: -320
+  lineGap: 0
+  advanceWidthMax: 800
+  minLeftSideBearing: 0
+  minRightSideBearing: 0
+  xMaxExtent: 800
+  numberOfHMetrics: 4
+
+OS/2:
+  version: 4
+  xAvgCharWidth: 800
+  usWeightClass: 400
+  usWidthClass: 5
+  sTypoAscender: 1280
+  sTypoDescender: -320
+  sTypoLineGap: 0
+  usWinAscent: 1280
+  usWinDescent: 320
+  fsSelection: 128
+  usDefaultChar: 0
+  usBreakChar: 32
+  usMaxContext: 1
+
+post:
+  isFixedPitch: 1
+  underlinePosition: -120
+  underlineThickness: 80
+
+selected glyphs:
+  U+0020 ascii_20: advanceWidth=800, leftSideBearing=0, bounds=(0, 0, 0, 0)
+  U+0041 ascii_41: advanceWidth=800, leftSideBearing=144, bounds=(144, -32, 656, 992)
+  U+E000 nbp_000: advanceWidth=800, leftSideBearing=0, bounds=(0, 0, 0, 0)
+  U+E001 nbp_001: advanceWidth=800, leftSideBearing=0, bounds=(0, 880, 400, 1280)
+  U+E00F nbp_015: advanceWidth=800, leftSideBearing=0, bounds=(0, -320, 400, 1280)
+  U+E0F0 nbp_240: advanceWidth=800, leftSideBearing=400, bounds=(400, -320, 800, 1280)
+  U+E0FF nbp_255: advanceWidth=800, leftSideBearing=0, bounds=(0, -320, 800, 1280)

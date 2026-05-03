@@ -34,7 +34,8 @@ typeset -i nbp_CBC=${nbp_widthBraille}		# Character Block Columns
 typeset -i nbp_CBR=${nbp_heightBraille}		# Character Block Rows
 
 # Global variables
-nbp_displayPlot=""
+nbp_displayPlot="On"				# if 'On', nbp_f_Plot is called, the output will be immediate
+#nbp_displayPlot=""				# if unset or blank & nbp_f_Plot is called, no output (call npb_f_Show).
 
 # Global associative/ 2D arrays
 # nbp_CAAV is the Cursor Addressable Area for Virtual Bitmask
